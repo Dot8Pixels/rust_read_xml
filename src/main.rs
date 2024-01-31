@@ -40,8 +40,14 @@ fn print_results(seen: &HashMap<String, usize>, counter: &usize) {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
-    let filename = "/home/vscode/enwiki-20230501-pages-meta-history1.xml-p1p844";
+    let filename = "Samplexml500.xml";
     let mut reader = Reader::from_file(filename).unwrap();
+
+    // let xml = r#"<tag1 att1 = "test">
+    //             <tag2><!--Test comment-->Test</tag2>
+    //             <tag2>Test 2</tag2>
+    //          </tag1>"#;
+    // let mut reader = Reader::from_str(xml);
 
     let mut path = Vec::new();
     let mut seen = HashMap::new();
